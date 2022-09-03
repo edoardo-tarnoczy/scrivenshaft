@@ -1,13 +1,13 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="w-full h-screen flex">
-    <Sidebar />
+  <div class="w-screen h-screen flex">
+    <SidebarLeft />
     <main
       id="main"
-      class="p-12 text-slyth-100 bg-slyth-900 w-full overflow-auto"
+      class="p-12 ml-[20%] text-slyth-100 bg-slyth-100 w-full overflow-auto"
     >
-      <slot></slot>
+      <slot> </slot>
     </main>
   </div>
 </template>

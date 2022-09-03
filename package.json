@@ -12,6 +12,8 @@
     "sass": "^1.54.5"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.8"
+    "@heroicons/vue": "^2.0.8",
+    "@vueuse/core": "^9.1.1",
+    "contentful": "^9.1.34"
   }
 }

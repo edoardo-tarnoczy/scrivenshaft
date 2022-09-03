@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// @TODO collapse link on small screen, vueuse/useMediaQuery
 import { SidebarLink } from "~/components/Sidebar/Links/linksUtils";
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 

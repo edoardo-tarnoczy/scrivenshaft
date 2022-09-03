@@ -1,7 +1,5 @@
-<script lang="ts" setup>
-const html = "<p><strong>Hello</strong></p>";
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div v-html="html"></div>
+  <div class="h-auto"></div>
 </template>

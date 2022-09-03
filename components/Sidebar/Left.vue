@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import { sidebarLinks } from "~/components/Sidebar/Links/linksUtils";
+// @TODO make it 5% on small screen with toggle to open
 </script>
 
 <template>
-  <aside id="sidebar" class="sticky w-3/12 bg-slyth-900">
-    <div
-      class="p-4 w-full h-screen grid grid-rows-12 border-r border-r-slyth-700"
-    >
+  <aside id="sidebar" class="z-10 w-[20%] fixed h-screen bg-slyth-900">
+    <div class="p-4 w-full h-full grid grid-rows-12">
       <h1
         class="flex items-center justify-center row-span-1 font-satisfy text-slyth-gold text-3xl text-center font-semibold"
       >
@@ -20,7 +19,7 @@ import { sidebarLinks } from "~/components/Sidebar/Links/linksUtils";
         />
       </div>
       <div
-        class="row-span-2 py-4 mt-3 gap-2 flex flex-col text-slyth-300 text-xs absolute bottom-0"
+        class="row-span-2 py-4 mt-3 gap-2 flex flex-col justify-center text-slyth-300 text-xs"
       >
         <span class="cursor-pointer hover:text-slyth-400"
           >© Website Designed & Created: Eddy</span
@@ -31,6 +30,7 @@ import { sidebarLinks } from "~/components/Sidebar/Links/linksUtils";
       </div>
     </div>
   </aside>
+  <!--  <div v-if="isOpen" @click.self="isOpen = false" class="backdrop-blur absolute w-screen h-screen"></div>-->
 </template>
 
 <style lang="scss" scoped>

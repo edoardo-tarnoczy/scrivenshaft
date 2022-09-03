@@ -11,6 +11,9 @@ module.exports = {
         "span-8": "span 8 / span 8",
         "span-10": "span 10 / span 10",
       },
+      height:{
+        '90%': '90%'
+      },
       colors: {
         slyth: {
           50: "#e1e9e333",
