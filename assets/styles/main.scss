@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "https://fonts.googleapis.com/css2?family=Satisfy&family=Signika+Negative:wght@400;600;700&display=swap";
+@layer base {
+  html {
+    @apply bg-slyth-800;
+    font-family: "Signika Negative", sans-serif;
+  }
+}
