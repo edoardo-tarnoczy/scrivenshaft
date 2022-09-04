@@ -2,6 +2,7 @@ import {
   MusicalNoteIcon,
   SparklesIcon,
   MagnifyingGlassIcon,
+  CurrencyYenIcon,
 } from "@heroicons/vue/24/solid";
 
 type IconType = typeof MusicalNoteIcon;
@@ -15,12 +16,12 @@ export interface SidebarLink {
 
 export const sidebarLinks = [
   {
-    label: "Traduzioni",
+    label: "Fanfiction",
     subLinks: [
       {
-        label: "Glee",
-        icon: MusicalNoteIcon,
-        to: "/",
+        label: "Anime & Manga",
+        icon: CurrencyYenIcon,
+        to: `/categoria/anime-&-manga`,
       },
       {
         label: "Sherlock BBC",

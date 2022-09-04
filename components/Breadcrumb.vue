@@ -12,7 +12,7 @@ const calcPath = (idx: number) =>
 </script>
 
 <template>
-  <div class="absolute top-6 left-16 text-slyth-600 flex uppercase">
+  <div class="pl-16 h-20 items-center text-slyth-600 flex uppercase">
     <div class="flex" v-for="(name, idx) in pathArray" :key="idx">
       <a class="hover:text-slyth-900" :href="calcPath(idx)">{{ name }} </a>
       <ChevronRightIcon

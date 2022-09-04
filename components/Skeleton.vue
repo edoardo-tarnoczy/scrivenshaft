@@ -12,7 +12,7 @@ withDefaults(
 
 <template>
   <div
-    :class="[height, width]"
+    :class="height + ' ' + width"
     class="rounded max-w-full h-4 bg-slyth-200 animate-pulse"
   ></div>
 </template>
