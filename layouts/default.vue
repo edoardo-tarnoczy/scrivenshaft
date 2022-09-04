@@ -5,10 +5,12 @@
     <SidebarLeft />
     <main
       id="main"
-      class="relative p-12 ml-[20%] text-slyth-100 bg-slyth-100 w-full overflow-auto"
+      class="ml-[20%] text-slyth-100 bg-slyth-100 w-full overflow-auto"
     >
       <Breadcrumb :path="$route.fullPath" />
-      <slot> </slot>
+      <div class="px-12 py-4">
+        <slot> </slot>
+      </div>
     </main>
   </div>
 </template>
