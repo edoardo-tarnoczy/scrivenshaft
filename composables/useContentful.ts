@@ -68,7 +68,7 @@ export function useContentful(SPACE?: string, TOKEN?: string) {
   };
 
   const fandoms = {
-    getAll: async (filters: any) => {
+    getAll: async (filters?: any) => {
       const { items } = await client.getEntries({
         content_type: "fandoms",
         ...filters,
