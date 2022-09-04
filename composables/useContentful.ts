@@ -1,7 +1,7 @@
 import * as contentful from "contentful";
 import { useRuntimeConfig } from "#imports";
 
-export function UseContentful() {
+export function useContentful() {
   const config = useRuntimeConfig();
   const client = contentful.createClient({
     space: config.public.contentfulSpace,
@@ -9,14 +9,7 @@ export function UseContentful() {
   });
 
   function parseDataArray(items: any[]) {
-    return items.map((item) => ({
-      id: item.sys.id,
-      createdAt: item.sys.createdAt,
-      updatedAt: item.sys.updatedAt,
-      title: item.fields.title,
-      body: parseMarkdown(item.fields.body),
-      notes: parseMarkdown(item.fields.notes),
-    }));
+    return items.map((item) => parseSingleData(item));
   }
 
   function parseSingleData(item: any) {
@@ -24,9 +17,18 @@ export function UseContentful() {
       id: item.sys.id,
       createdAt: item.sys.createdAt,
       updatedAt: item.sys.updatedAt,
+      fandom: item.fields.fandom,
+      genre: item.fields.genre,
+      characters: item.fields.characters,
       title: item.fields.title,
       body: parseMarkdown(item.fields.body),
+      summary: item.fields.summary,
       notes: parseMarkdown(item.fields.notes),
+      cover: {
+        title: item.fields.cover.fields.title,
+        description: item.fields.cover.fields.description,
+        url: item.fields.cover.fields.file.url,
+      },
     };
   }
   function parseMarkdown(text: string) {

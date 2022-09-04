@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { UseContentful } from "~/composables/useContentful";
+import { useContentful } from "~/composables/useContentful";
 import { onBeforeMount, onMounted, useRoute } from "#imports";
 import { useAsyncState } from "@vueuse/core";
 import Skeleton from "~/components/Skeleton.vue";
 
-const { blogPost } = UseContentful();
+const { blogPost } = useContentful();
 const { state: post, execute } = useAsyncState(
   () => blogPost.getOneById(useRoute().params.id as string),
   null,

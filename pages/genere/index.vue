@@ -1,5 +1,5 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="flex flex-col gap-4">genres</div>
+  <div class="text-slyth-900">categories</div>
 </template>

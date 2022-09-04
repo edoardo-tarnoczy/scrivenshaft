@@ -6,11 +6,12 @@ import { sidebarLinks } from "~/components/Sidebar/Links/linksUtils";
 <template>
   <aside id="sidebar" class="z-10 w-[20%] fixed h-screen bg-slyth-900">
     <div class="p-4 w-full h-full grid grid-rows-12">
-      <h1
+      <NuxtLink
+        to="/"
         class="flex items-center justify-center row-span-1 font-satisfy text-slyth-gold text-3xl text-center font-semibold"
       >
         Scrivenshaft
-      </h1>
+      </NuxtLink>
       <div class="link-menu-container row-span-10 overflow-auto">
         <SidebarLinks
           class="text-slyth-100"

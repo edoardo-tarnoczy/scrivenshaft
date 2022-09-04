@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { UseContentful } from "~/composables/useContentful";
+import { useContentful } from "~/composables/useContentful";
 import { onBeforeMount, onMounted, useRoute } from "#imports";
 import { useAsyncState, useTimeAgo } from "@vueuse/core";
 import Skeleton from "~/components/Skeleton.vue";
 
-const { blogPost } = UseContentful();
+const { blogPost } = useContentful();
 const route = useRoute();
 const { state: posts, execute } = useAsyncState(
-  () => blogPost.getAll({ "fields.category": route.params.genre }),
+  () => blogPost.getAll({ "fields.fandom": route.params.fandom }),
   null,
   { immediate: false }
 );
@@ -19,16 +19,15 @@ onBeforeMount(() => execute());
     <div
       @click="$router.push(route.fullPath + '/' + id)"
       class="bg-slyth-50 rounded-3xl p-4 h-auto w-6/12 overflow-ellipsis cursor-pointer"
-      v-for="{ title, body, id, createdAt, updatedAt } in posts"
+      v-for="{ title, summary, id, createdAt, updatedAt } in posts"
     >
       <h1 class="text-slyth-400 font-bold max-w-5xl uppercase">
         {{ title }}
       </h1>
       <div class="separator"></div>
-      <div
-        class="text-slyth-900"
-        v-html="body.slice(0, 300).concat('...')"
-      ></div>
+      <p class="text-slyth-900">
+        {{ summary }}
+      </p>
       <div class="separator"></div>
       <div class="flex text-xs">
         <p class="text-slyth-500 mr-auto">
