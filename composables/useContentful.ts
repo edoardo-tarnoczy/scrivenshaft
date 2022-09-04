@@ -36,9 +36,10 @@ export function UseContentful() {
       .replace(/__([^_]*)__/gim, "<strong class='text-slyth-400'>$1</strong>");
   }
   const blogPost = {
-    getAll: async () => {
+    getAll: async (filters: any) => {
       const { items } = await client.getEntries({
         content_type: "blogPost",
+        ...filters,
       });
       return parseDataArray(items);
     },
